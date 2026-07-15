@@ -446,6 +446,39 @@ p { margin: 0 0 1em; color: var(--text-muted); }
   font-style: italic;
 }
 
+.write-review {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(18,36,54,0.1);
+  max-width: 560px;
+}
+.write-review h3 { margin-bottom: 0.3em; }
+.write-review > p { font-size: 0.95rem; }
+.optional-tag { font-weight: 400; color: var(--text-muted); text-transform: none; letter-spacing: normal; }
+
+.review-form {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(18,36,54,0.08);
+  margin-top: 20px;
+}
+.review-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(18,36,54,0.18);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.review-form select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(224,168,62,0.25);
+}
+
 /* Process */
 .process-list {
   list-style: none;

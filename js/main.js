@@ -22,7 +22,7 @@
   // Scroll reveal
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var revealTargets = document.querySelectorAll(
-    ".service-card, .feature, .process-list li, .contact-form, .contact-info, .service-area-inner > div, .review-card, .reviews-summary"
+    ".service-card, .feature, .process-list li, .contact-form, .contact-info, .service-area-inner > div, .review-card, .reviews-summary, .write-review"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 
@@ -81,6 +81,34 @@
         "",
         "Project details:",
         message,
+      ];
+      var mailto =
+        "mailto:georgialinaps@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(bodyLines.join("\n"));
+
+      window.location.href = mailto;
+    });
+  }
+
+  // Review submission form -> mailto (submissions are moderated before posting, not auto-published)
+  var reviewForm = document.getElementById("review-form");
+  if (reviewForm) {
+    reviewForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("review-name").value.trim();
+      var rating = document.getElementById("review-rating").value;
+      var project = document.getElementById("review-project").value.trim();
+      var text = document.getElementById("review-text").value.trim();
+
+      var subject = "New website review from " + name;
+      var bodyLines = [
+        "Name: " + name,
+        "Rating: " + rating,
+        "Project Type: " + (project || "(not provided)"),
+        "",
+        "Review:",
+        text,
       ];
       var mailto =
         "mailto:georgialinaps@gmail.com" +

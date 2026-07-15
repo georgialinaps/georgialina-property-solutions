@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Georgialina Property Solutions">
 <meta name="twitter:description" content="Full-service home improvement across the CSRA: repairs, renovations, remodels, additions, and more.">
 <meta name="twitter:image" content="https://georgialinasolutions.com/assets/logo.png">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -314,6 +314,38 @@
       </button>
 
       <p class="reviews-note">Reviews shown as posted by verified customers on Angi.</p>
+
+      <div class="write-review" id="write-review">
+        <h3>Worked With Us? Leave a Review</h3>
+        <p>We'd love to hear how it went. Submit your review below and we'll get it posted.</p>
+        <form class="review-form" id="review-form" aria-label="Submit a review">
+          <div class="form-row">
+            <label for="review-name">Name</label>
+            <input type="text" id="review-name" name="review-name" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="review-rating">Rating</label>
+            <select id="review-rating" name="review-rating" required>
+              <option value="">Select a rating</option>
+              <option value="5 stars">★★★★★ &mdash; Excellent</option>
+              <option value="4 stars">★★★★ &mdash; Very Good</option>
+              <option value="3 stars">★★★ &mdash; Good</option>
+              <option value="2 stars">★★ &mdash; Fair</option>
+              <option value="1 star">★ &mdash; Poor</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="review-project">Project Type <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="review-project" name="review-project" placeholder="e.g. Kitchen Remodel, Handyman Repair">
+          </div>
+          <div class="form-row">
+            <label for="review-text">Your Review</label>
+            <textarea id="review-text" name="review-text" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+          <p class="form-note">Submitting opens your email app to send your review to us for posting &mdash; it won't appear on the site automatically.</p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -461,6 +493,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>
