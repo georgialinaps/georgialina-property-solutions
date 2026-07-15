@@ -43,6 +43,26 @@
     revealTargets.forEach(function (el) { io.observe(el); });
   }
 
+  // Reviews show more/fewer toggle
+  var reviewsToggle = document.getElementById("reviews-toggle");
+  var reviewsGrid = document.getElementById("reviews-grid");
+  if (reviewsToggle && reviewsGrid) {
+    reviewsToggle.addEventListener("click", function () {
+      var expanded = reviewsGrid.classList.toggle("show-all");
+      reviewsToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      reviewsToggle.childNodes[0].nodeValue = expanded
+        ? "Show Fewer Reviews "
+        : "Show All 13 Reviews ";
+      if (expanded) {
+        reviewsGrid.querySelectorAll(".review-extra").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      } else {
+        reviewsGrid.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
+    });
+  }
+
   // Contact form -> mailto (no backend available yet)
   var form = document.getElementById("contact-form");
   if (form) {

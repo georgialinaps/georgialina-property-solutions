@@ -425,8 +425,22 @@ p { margin: 0 0 1em; color: var(--text-muted); }
 }
 .review-meta strong { color: var(--navy); }
 
-.reviews-note {
+.review-card.review-extra { display: none; }
+.reviews-grid.show-all .review-card.review-extra { display: flex; }
+
+.reviews-toggle-btn {
   margin-top: 28px;
+  gap: 8px;
+}
+.reviews-toggle-btn svg {
+  transition: transform 0.25s ease;
+}
+.reviews-toggle-btn[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.reviews-note {
+  margin-top: 20px;
   font-size: 0.82rem;
   color: var(--text-muted);
   font-style: italic;
