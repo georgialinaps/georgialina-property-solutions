@@ -22,7 +22,7 @@
   // Scroll reveal
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var revealTargets = document.querySelectorAll(
-    ".service-card, .feature, .process-list li, .contact-form, .contact-info, .service-area-inner > div"
+    ".service-card, .feature, .process-list li, .contact-form, .contact-info, .service-area-inner > div, .review-card, .reviews-summary"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 
